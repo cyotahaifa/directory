@@ -511,7 +511,7 @@ html.lk-blur body::before{content:"Click here to continue viewing";position:fixe
   const wipeClip = () => { try { navigator.clipboard && navigator.clipboard.writeText(' '); } catch (_) {} };
 
   // take out the "Copy emails" button entirely
-  const dropCopy = () => document.querySelectorAll('#copyemails,#copyhold').forEach(n => n.remove());
+  const dropCopy = () => document.querySelectorAll('#copyemails').forEach(n => n.remove());   // keep #copyhold: the app clears it when opening a college
   dropCopy(); new MutationObserver(dropCopy).observe(document.documentElement, { childList: true, subtree: true });
 
   // right-click, selecting, dragging, copy / cut
